@@ -15,3 +15,8 @@
 
 1. What is the total amount each customer spent at the restaurant?
 1.A - 
+SELECT S.CUSTOMER_ID,
+	SUM(M.PRICE)
+FROM SALES S
+INNER JOIN MENU M ON S.PRODUCT_ID = M.PRODUCT_ID
+GROUP BY S.CUSTOMER_ID
